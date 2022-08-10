@@ -1,3 +1,4 @@
+<!-- Calculo de consumo -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,13 +8,32 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Esta es una paguina</h1>
-    <br />
-    Descripcion de
-    <a href="https://es.wikipedia.org/wiki/HTML">HTML</a>
-    <p>Listo</p>
-    <script>
-        alert("Mensaje de alerta!!");
-    </script>
+    <header></header>
+    <main>
+      <section>
+        <h3>¿Alcohol o gasolina?</h3>
+        <script>
+            
+          var capacidad = 40;
+          var recorridoGT = 480;
+          var recorridoAT = 300;
+          var recorriloLitroGas = 0;
+          var recorriloLitroAlc = 0;
+
+          var eficienciaAl = 0;
+
+          recorriloLitroGas = recorridoGT / capacidad;
+          recorriloLitroAlc = recorridoAT / capacidad;
+
+          eficienciaAl = (100 / recorridoGT) * recorridoAT;
+
+          document.write("<p>El recorrido por litro de gasolina: " + recorriloLitroGas + " km</p>");
+          document.write("<p>El recorrido por litro de alcohol: " + recorriloLitroAlc + " km</p>");
+          document.write("<p>Eficiencia del alcohol sobre la gasolina: " + eficienciaAl + "%</p>");
+
+        </script>
+      </section>
+    </main>
+    <footer></footer>
   </body>
 </html>
