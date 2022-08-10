@@ -1,39 +1,41 @@
-<!-- Calculo de consumo -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header></header>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferencia de edades</title>
+</head>
+<body>
     <main>
-      <section>
-        <h3>¿Alcohol o gasolina?</h3>
-        <script>
-            
-          var capacidad = 40;
-          var recorridoGT = 480;
-          var recorridoAT = 300;
-          var recorriloLitroGas = 0;
-          var recorriloLitroAlc = 0;
+        <section>
+            <script>
+                // Funcion para imprimir
+                function imprimir(msg){
+                    var saltos = 0;
+                    document.write(msg);
+                    saltoLinea(saltos);
 
-          var eficienciaAl = 0;
+                }
+                // Funcion para salto de linea
+                function saltoLinea(cant){
+                    
+                    for (let i = cant; i > 0; i--) {
+                        document.write("<br>");
+                    }
+                }
 
-          recorriloLitroGas = recorridoGT / capacidad;
-          recorriloLitroAlc = recorridoAT / capacidad;
+                // Proceso
+                var edadMia = 19;
+                var edadHer = 22;
+                var diferencia = edadHer - edadMia;
 
-          eficienciaAl = (100 / recorridoGT) * recorridoAT;
+                imprimir("<p>Mi edad es de: " + edadMia + " años</p>");
+                imprimir("<p>La edad de mi hermano es: " + edadHer + " años</p>");
+                imprimir("<p>La diferencia de edades es: " + diferencia + " años</p>");
 
-          document.write("<p>El recorrido por litro de gasolina: " + recorriloLitroGas + " km</p>");
-          document.write("<p>El recorrido por litro de alcohol: " + recorriloLitroAlc + " km</p>");
-          document.write("<p>Eficiencia del alcohol sobre la gasolina: " + eficienciaAl + "%</p>");
-
-        </script>
-      </section>
+            </script>
+        </section>
     </main>
-    <footer></footer>
-  </body>
+</body>
 </html>
