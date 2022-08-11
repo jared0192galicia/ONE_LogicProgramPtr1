@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Paguina de numeros primos">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diferencia de edades</title>
+    <title>Numeros primos</title>
 </head>
 <body>
     <main>
         <section>
             <script>
-                // Funcion para imprimir
-                function imprimir(msg){
-                    var saltos = 0;
+                function println(msg){
+                    var saltos = 1;
                     document.write(msg);
                     saltoLinea(saltos);
 
@@ -25,17 +25,28 @@
                     }
                 }
 
-                // Proceso
-                var edadMia = 19;
-                var edadHer = 22;
-                var diferencia = edadHer - edadMia;
+                var i = 1;
 
-                imprimir("<p>Mi edad es de: " + edadMia + " años</p>");
-                imprimir("<p>La edad de mi hermano es: " + edadHer + " años</p>");
-                imprimir("<p>La diferencia de edades es: " + diferencia + " años</p>");
-
+                // Imprecion de numeros primos
+                while (i <= 100) {
+                    
+                    if((i % 2) == 0) {
+                        println("Numero primo: " + i);
+                    }
+                    i++;
+                }
+                println("Fin");
             </script>
         </section>
     </main>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
