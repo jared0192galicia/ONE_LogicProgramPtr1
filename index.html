@@ -1,41 +1,58 @@
+<!-- Juego Adivinador -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Paguina de numeros primos">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numeros primos</title>
+    <title>Adivinador</title>
+    <style>
+        .winner{
+            background: green;
+            color: aliceblue;
+        }
+        .loser {
+            background-color: red;
+            color: beige;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Juego Adivinador</h1>
+    </header>
     <main>
         <section>
             <script>
+                function salto(){
+                    document.write("<br>");
+                }
+
                 function println(msg){
-                    var saltos = 1;
                     document.write(msg);
-                    saltoLinea(saltos);
-
+                    salto();
                 }
-                // Funcion para salto de linea
-                function saltoLinea(cant){
-                    
-                    for (let i = cant; i > 0; i--) {
-                        document.write("<br>");
+
+                var numero = Math.round(Math.random() * 10);
+                var respuesta;
+
+                // Proceso
+                for (let i = 0; i < 3; i++) {
+                    respuesta = parseInt(prompt("Adivina el numero entre 0 y 10"));
+                    if (respuesta == numero) {
+                        alert("Usted acerto en el " + (i + 1) + "° intento");
+                        break;
+                    } else {
+                        alert("Usted fallo el " + (i + 1) + "° intento");
                     }
                 }
 
-                var i = 1;
-
-                // Imprecion de numeros primos
-                while (i <= 100) {
-                    
-                    if((i % 2) == 0) {
-                        println("Numero primo: " + i);
-                    }
-                    i++;
+                // Desicion de texto y color utilizando atributo cass en un div
+                if(respuesta == numero) {
+                    println('<div class="winner"><h4>Felizidades ganaste!! El numero es: ' + numero + '</h4> </div>');
+                } else {
+                    println('<div class="loser"><h4>Haz fracasado. El numero era: ' + numero + '</h4> </div>');
                 }
-                println("Fin");
             </script>
         </section>
     </main>
